@@ -1,0 +1,12 @@
+category_id,category,sql_seq
+1,Inorganic species,1077
+2,"Hydrocarbons (C, H)",2732
+3,Organic species with oxygen (O),19160
+4,Organic species with nitrogen (N),58046
+5,Organic species with fluorine (F),76166
+6,Organic species with chlorine (Cl),78345
+7,Organic species with bromine (Br),94036
+8,Organic species with iodine (I),97458
+9,Organic species with sulfur (S),98054
+10,Organic species with phosphorus (P),102239
+11,Organic species with other elements,103387

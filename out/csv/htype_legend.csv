@@ -1,0 +1,12 @@
+code,short_label,definition,source,n_henry_rows
+L,literature review,The cited paper is a literature review.,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",1966
+M,measured,The cited paper presents the original measurements.,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",3791
+V,VP/AS = vapor pressure/aqueous solubility,The vapor pressure of the pure substance was divided by its aqueous solubility (sometimes called the “VP/AS” method).,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",4888
+R,recalculation,The cited paper presents a recalculation of previously published material (e.g. extrapolation to a different temperature or concentration range).,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",109
+T,thermodynamical calculation,"The value was obtained from a thermodynamical calculation (1sol G = −RT ln H ; see Sander, 1999 for details).","Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",294
+X,original paper not available,The original paper was not available for this study. The data listed here were found in a secondary source.,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",2467
+C,citation,"The paper is a citation of a reference which I could not obtain (personal communication, PhD theses, grey literature).","Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",417
+Q,QSPR,The value was calculated using a “quantitative structure–property relationship” (QSPR) or a similar theoretical method.,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",28735
+E,estimate,The value is an estimate. Estimates are listed only if no reliable data are available.,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",104
+?,unknown,The cited paper does not clearly state how the value was obtained.,"Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",3591
+W,wrong,"The value is probably wrong. It is not listed in the table, in order to avoid spreading of erroneous data. More information can be found in the notes.","Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. 10908)",72

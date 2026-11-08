@@ -1,0 +1,48 @@
+{
+ "source_url": "https://henrys-law.org/henry_data/henry_5.0.0_sql.zip",
+ "zip_sha256": "d90b7264a55ebb2c42fcca4b3483d0cc5361caa177224685cc66f3f7d7fb9d1b",
+ "sql_member": "henry-5.0.0.sql",
+ "sql_sha256": "c62f0d221f08b22883812b53a0df996b37a9f037c3fc46dd5adb5110b753de85",
+ "sql_bytes": 22139462,
+ "statements": 104054,
+ "conversion_factor_si_to_matm": "101.325",
+ "conversion_factor_source": "Sander (2023), Table 2 (p. 10903)",
+ "legend_source_pages": [
+  10908
+ ],
+ "paper_pdf_sha256": "8c059bc311cacb0b4626f1935a06f990303d9af0af50721dd5fb864ddbc88bad",
+ "events": [
+  {
+   "sql_seq": 1941,
+   "table": "henry",
+   "column": "literature_id",
+   "event": "lookup_no_match",
+   "detail": "literature.bibtexkey = 'this' matched no row inserted so far"
+  },
+  {
+   "sql_seq": 1948,
+   "table": "henry",
+   "column": "literature_id",
+   "event": "lookup_no_match",
+   "detail": "literature.bibtexkey = 'this' matched no row inserted so far"
+  },
+  {
+   "sql_seq": 2126,
+   "table": "henry",
+   "column": "literature_id",
+   "event": "lookup_no_match",
+   "detail": "literature.bibtexkey = 'this' matched no row inserted so far"
+  }
+ ],
+ "counts": {
+  "categories": 11,
+  "subcategories": 63,
+  "species": 10173,
+  "literature": 1076,
+  "notes": 826,
+  "note_references": 724,
+  "henry": 46434,
+  "henry_notes": 45471,
+  "htype_legend": 11
+ }
+}

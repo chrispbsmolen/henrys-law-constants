@@ -1,0 +1,38 @@
+{
+ "layer_version": "1",
+ "errata_entries_total": 27,
+ "errata_entries_by_version": {
+  "5.0.0": 2,
+  "4.0": 5,
+  "3.99": 2,
+  "3": 18
+ },
+ "v5_entries": 2,
+ "patches": 6,
+ "live_species_pages_read": [
+  "casrn_14989-30-1.html",
+  "casrn_3907-98-0.html",
+  "casrn_534-22-5.html",
+  "casrn_96-47-9.html"
+ ],
+ "page_reads_used": 7,
+ "page_reads_needed_for_errata": 6,
+ "kill_criterion_10000_reads_exceeded": false,
+ "full_live_audit_would_need_species_pages": 10173,
+ "live_pages_counts": {
+  "live_notes": 827,
+  "live_references": 1076
+ },
+ "live_differences_not_in_errata": 215,
+ "live_differences_not_in_errata_by_kind": {
+  "notes / digits only (e.g. refitted coefficients)": 200,
+  "literature / text": 10,
+  "literature / letter case only": 3,
+  "notes / letter case only": 1,
+  "literature / digits only (e.g. refitted coefficients)": 1
+ },
+ "older_entry_checks": {
+  "not checked": 18,
+  "pass": 7
+ }
+}

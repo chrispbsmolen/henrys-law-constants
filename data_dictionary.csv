@@ -1,0 +1,117 @@
+table,column,type,description
+categories,category_id,integer,"Row id, 1-based in insert order (PostgreSQL SERIAL)."
+categories,category,text,Category name (catname).
+categories,sql_seq,integer,Position of the INSERT statement in henry-5.0.0.sql (1 = first INSERT).
+subcategories,subcategory_id,integer,"Row id, 1-based in insert order."
+subcategories,subcategory,text,Subcategory name (subcatname).
+subcategories,category_id,integer,"categories.category_id, resolved from the name lookup in the dump."
+subcategories,category_key,text,"The category name used in the lookup, as written in the dump."
+subcategories,sql_seq,integer,Position of the INSERT statement in the dump.
+species,species_id,integer,"Row id, 1-based in insert order; henry.species_id refers to it."
+species,iupac,text (HTML),Systematic name exactly as in the dump; may contain HTML such as <i>tert</i>.
+species,iupac_text,text,"Plain-text rendering of iupac (tags removed, entities decoded)."
+species,formula,text (HTML),"Chemical formula exactly as in the dump, e.g. O<sub>2</sub>."
+species,formula_text,text,"Plain-text rendering of formula, e.g. O2."
+species,trivial,text (HTML),Trivial name(s) as in the dump; empty if none.
+species,trivial_text,text,Plain-text rendering of trivial.
+species,casrn,text,CAS Registry Number; empty if none is given.
+species,inchikey,text,Standard InChIKey; empty if none is given. Two keys are corrected in the errata layer.
+species,subcategory_id,integer,"subcategories.subcategory_id, resolved from the name lookup."
+species,subcategory_key,text,"The subcategory name used in the lookup, as written in the dump."
+species,sql_seq,integer,Position of the INSERT statement in the dump.
+species,n_henry_rows,integer,Number of henry rows for this species.
+species,patched,boolean,(patched copy only) True if an errata patch changed this row.
+literature,literature_id,integer,"Row id, 1-based in insert order; henry.literature_id refers to it."
+literature,bibtexkey,text,Reference key used by the compilation (usually a number).
+literature,quotation,text (HTML),"Short citation, e.g. Abraham et&nbsp;al. (2007)."
+literature,quotation_text,text,Plain-text rendering of quotation.
+literature,bibliography,text (HTML),Full reference exactly as in the dump.
+literature,bibliography_text,text,Plain-text rendering of bibliography.
+literature,doi,text,"DOI taken from the first https://doi.org/ link in bibliography; empty if there is none. The dump's own doi column is never filled, so it is not carried over."
+literature,doi_url,text,https://doi.org/ + doi; empty if there is no DOI.
+literature,n_doi_links,integer,Number of doi.org links found in bibliography.
+literature,sql_seq,integer,Position of the INSERT statement in the dump.
+literature,n_henry_rows,integer,Number of henry rows citing this reference.
+notes,note_id,integer,"Row id, 1-based in insert order. Note: the live website numbers notes independently; its numbers can differ."
+notes,notelabel,text,Note label used for the lookup in the dump.
+notes,noterefs,text,"Comma-separated bibtexkeys cited by the note, as in the dump (split out in note_references)."
+notes,notetext_html,text (HTML),Note text exactly as in the dump (HTML kept). Three-parameter temperature fits appear only here.
+notes,notetext_text,text,"Plain-text rendering: tags removed, <sup>x</sup> written as ^x or ^(xy), entities decoded, non-breaking spaces made ordinary spaces."
+notes,sql_seq,integer,Position of the INSERT statement in the dump (empty for notes added by the errata layer).
+notes,n_henry_rows,integer,Number of henry rows linked to this note.
+note_references,note_id,integer,notes.note_id.
+note_references,position,integer,Order of the key within noterefs (1-based).
+note_references,bibtexkey,text,Cited key.
+note_references,literature_id,integer,literature.literature_id for that key; empty if the key is not in literature.
+henry,henry_id,integer,"Row id, 1-based in insert order (the id CURRVAL('henry_id_seq') refers to)."
+henry,species_id,integer,"species.species_id, resolved from the iupac lookup."
+henry,species_key,text,"The species name used in the lookup, as written in the dump."
+henry,literature_id,integer,"literature.literature_id; empty for the 3 rows citing the key 'this', which has no literature row."
+henry,bibtexkey,text,"The reference key used in the lookup, as written in the dump."
+henry,htype,text,Type code (how the value was obtained); see htype_legend.
+henry,hominus_raw,text (HTML),"The Hominus string exactly as in the dump, e.g. 1.3&times;10<sup>&#8722;5</sup>, &gt; 1.0, &#8734; (infinity) or empty."
+henry,value_status,text,"ok (a number), empty (no value), infinity (the &#8734; sign) or parse_failure."
+henry,limit_flag,text,> or < when the value is a lower or upper limit; empty otherwise.
+henry,hscp_mantissa,text,"Mantissa as written (two significant digits), e.g. 1.3."
+henry,hscp_exponent,integer,Power of ten; empty when the value is written without one.
+henry,hscp_si_exact,text,"The value as an exact decimal string, e.g. 1.3e-5; inf for infinity."
+henry,hscp_si,float,Henry's law solubility constant Hscp at 298.15 K in mol/(m3 Pa) (float64; inf for infinity). For limits this is the limit value; read limit_flag.
+henry,hscp_matm,float,"hscp_si x hscp_matm_factor, i.e. Hscp in M/atm (mol/L per atm), computed in decimal arithmetic and then stored as float64."
+henry,hscp_matm_factor,float,"101.325: 1 mol/(m3 Pa) = 101.325 M/atm (Sander 2023, Table 2; atm = 101 325 Pa, M = mol/L)."
+henry,mindhr_raw,text,The mindHR string exactly as in the dump (empty if none).
+henry,mindhr_status,text,"ok, empty or parse_failure."
+henry,mindhr_K,integer,"Temperature dependence d ln Hscp / d(1/T) at 298.15 K, in K (= -Delta_sol H / R)."
+henry,note_ids,text,"notes.note_id values linked to this row, ';'-separated in the order of the dump."
+henry,n_notes,integer,Number of linked notes.
+henry,sql_seq,integer,Position of the INSERT statement in the dump.
+henry,patched,boolean,(patched copy only) True if an errata patch changed this row or its notes.
+henry_notes,henry_id,integer,"henry.henry_id, i.e. CURRVAL('henry_id_seq') at the point of the INSERT."
+henry_notes,note_id,integer,"notes.note_id, resolved from the label lookup."
+henry_notes,notelabel,text,"The note label used in the lookup, as written in the dump."
+henry_notes,sql_seq,integer,Position of the INSERT statement in the dump (empty for links added by the errata layer).
+htype_legend,code,text,Type code as used in henry.htype.
+htype_legend,short_label,text,Short label as printed in the legend of the species pages of henrys-law.org.
+htype_legend,definition,text,"Definition as printed in Sander (2023), Sect. 3.1, extracted from the PDF text layer. The PDF text layer renders the Greek capital Delta as '1' (code T: '1sol G' is Delta_sol G)."
+htype_legend,source,text,Where the definition was taken from.
+htype_legend,n_henry_rows,integer,Number of henry rows with this code.
+errata/errata_entries,entry_id,text,"Version and position on the page, e.g. 5.0.0-1."
+errata/errata_entries,errata_url,text,URL of the errata page.
+errata/errata_entries,errata_page_sha256,text,SHA-256 of the saved page.
+errata/errata_entries,errata_fetched_utc,text,When the page was read.
+errata/errata_entries,version,text,Version the entry belongs to.
+errata/errata_entries,section,text,Section heading on the page.
+errata/errata_entries,applies_to_v5_0_0,text,True for entries listed under version 5.0.0; older entries are stated on the page as already corrected.
+errata/errata_entries,text,text,Entry text (plain).
+errata/errata_entries,text_html,text,Entry text (HTML as on the page).
+errata/errata_entries,species,text,Species of the tables named in a v5.0.0 entry.
+errata/errata_entries,n_patches,text,Number of patch rows citing the entry.
+errata/errata_entries,consistency,text,For the InChIKey entry: whether the base value equals the old key and the live page shows the new key.
+errata/patches,patch_id,text,Patch identifier.
+errata/patches,layer_version,text,Version of the patch layer.
+errata/patches,op,text,update (change one column of an existing row) or insert (add a row; patched_value holds it as JSON).
+errata/patches,table,text,Base table the patch applies to.
+errata/patches,row_id,text,Id of the row in that table (henry_id;note_id for henry_notes).
+errata/patches,column,text,Column changed ('*' for inserts).
+errata/patches,base_value,text,Value in the v5.0.0 tables.
+errata/patches,patched_value,text,Value after the patch.
+errata/patches,errata_entry_id,text,errata_entries.entry_id of the entry that justifies the patch.
+errata/patches,errata_url,text,URL of the errata page.
+errata/patches,errata_text,text,Text of that entry.
+errata/patches,evidence_url,text,Live page showing the corrected value.
+errata/patches,evidence_file,text,Saved copy of that page (live/).
+errata/patches,evidence_sha256,text,SHA-256 of the saved copy.
+errata/patches,evidence_fetched_utc,text,When it was read.
+errata/patches,remark,text,Free-text remark.
+errata/live_differences_not_in_errata,table,text,Base table concerned.
+errata/live_differences_not_in_errata,difference_kind,text,"digits only, letter case only, text, or added or removed."
+errata/live_differences_not_in_errata,row_id,text,Row id in the base table.
+errata/live_differences_not_in_errata,column,text,Column concerned.
+errata/live_differences_not_in_errata,base_value,text,Value in v5.0.0.
+errata/live_differences_not_in_errata,live_value,text,Value on the live site.
+errata/live_differences_not_in_errata,evidence_url,text,Live page.
+errata/live_differences_not_in_errata,evidence_sha256,text,SHA-256 of the saved copy.
+errata/live_differences_not_in_errata,evidence_fetched_utc,text,When it was read.
+errata/live_differences_not_in_errata,context,text,Where the difference was seen.
+errata/errata_checks,entry_id,text,errata_entries.entry_id.
+errata/errata_checks,check,text,What was checked.
+errata/errata_checks,result,text,"pass, FAIL, or not checked (entry has no machine-checkable statement)."

@@ -1,0 +1,147 @@
+entry_id,errata_url,errata_page_sha256,errata_fetched_utc,version,section,applies_to_v5_0_0,text,text_html,species,n_patches,consistency
+5.0.0-1,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,5.0.0,Errata for version 5.0.0,True,"The InChIKey of 1,2,3-trichlorobenzene-d3 is RELMFMZEBKVZJC-CBYSEHNBSA-N, not SMNOERSLNYGGOU-UHFFFAOYSA-N. The InChIKey of monochlorine monoxide is NHYCGSASNAIGLD-UHFFFAOYSA-N, not MLWGAEVSWJXOQJ-UHFFFAOYSA-N (errors found by Trevor Brown, corrected 2024-11-08).","The InChIKey of 1,2,3-trichlorobenzene-d3 is
+RELMFMZEBKVZJC-CBYSEHNBSA-N, not SMNOERSLNYGGOU-UHFFFAOYSA-N. The
+InChIKey of monochlorine monoxide is NHYCGSASNAIGLD-UHFFFAOYSA-N, not
+MLWGAEVSWJXOQJ-UHFFFAOYSA-N (errors found by Trevor Brown, corrected
+2024-11-08).","1,2,3-trichlorobenzene-d3; monochlorine monoxide",2,"1,2,3-trichlorobenzene-d3: base has the old key and live page the new key: yes. monochlorine monoxide: base has the old key and live page the new key: yes. "
+5.0.0-2,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,5.0.0,Errata for version 5.0.0,True,"Although I correctly cited data for 2-methyltetrahydrofuran from Mackay et al. (1993), the values given there are apparently for 2-methylfuran, not 2-methyltetrahydrofuran. This was corrected by Mackay et al. (2006) in their 2nd edition (error found by Johannes Schäffer, 2026-07-28).","Although I correctly cited data for 2-methyltetrahydrofuran from
+Mackay et al. (1993), the values given there are apparently for
+2-methylfuran, not 2-methyltetrahydrofuran. This was corrected by Mackay
+et al. (2006) in their 2nd edition (error found by Johannes
+Sch&auml;ffer, 2026-07-28).",2-methyltetrahydrofuran; 2-methylfuran,4,
+4.0-1,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,4.0,Errata for version 4.0 (already corrected in subsequent versions),False,"When analyzing N2O5 from Fried et al. (1994), I had incorrectly assumed that they were referring to the Henry's law constant Hscp (in M/atm). Re-checking that publication, however, I noticed that they used the dimensionless Henry's law constant Hscc . The correct data are: Hscp (N2O5) = 8.7E-4 mol/(m^3*Pa) and a temperature-dependence of d ln Hs cp / d (1/T) = 3600 K.","When analyzing N<SUB>2</SUB>O<SUB>5</SUB> from Fried et al. (1994),
+I had incorrectly assumed that they were referring to the Henry's law
+constant
+  <math mathvariant=""sans-serif-italic"">
+    <msubsup><mi>H</mi><mi mathvariant=""sans-serif"">s</mi><mi>cp</mi></msubsup>
+  </math>
+(in M/atm). Re-checking that publication, however, I noticed that they
+used the dimensionless Henry's law constant
+  <math mathvariant=""sans-serif-italic"">
+    <msubsup><mi>H</mi><mi mathvariant=""sans-serif"">s</mi><mi>cc</mi></msubsup>
+  </math>.
+The correct data are:
+  <math mathvariant=""sans-serif-italic"">
+    <msubsup><mi>H</mi><mi mathvariant=""sans-serif"">s</mi><mi>cp</mi></msubsup>
+  </math>
+(N<SUB>2</SUB>O<SUB>5</SUB>) = 8.7E-4 mol/(m<SUP>3</SUP>*Pa) and a
+temperature-dependence of
+<math>
+  d ln <msubsup><mi>H</mi><mi mathvariant=""sans-serif"">s</mi>
+  <mi mathvariant=""sans-serif-italic"">cp</mi></msubsup> / d
+  (1/<mi mathvariant=""sans-serif-italic"">T</mi>)
+</math> = 3600 K.",,,
+4.0-2,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,4.0,Errata for version 4.0 (already corrected in subsequent versions),False,"Although I correctly cited the value of Hscp (HOBr) > 1.3E2 M/atm from the JPL Data Evaluation (2011), it turned out that the value given there was incorrect. More recent versions of the JPL Data Evaluation present the corrected value of Hscp (HOBr) > 1.3E3 M/atm.","Although I correctly cited the value of
+  <math mathvariant=""sans-serif-italic"">
+    <msubsup><mi>H</mi><mi mathvariant=""sans-serif"">s</mi><mi>cp</mi></msubsup>
+  </math>(HOBr) &gt; 1.3E2 M/atm from the JPL Data Evaluation (2011), it
+  turned out that the value given there was incorrect. More recent
+  versions of the <a href=""https://jpldataeval.jpl.nasa.gov/""
+  target=""_blank"">JPL Data Evaluation</a> present the corrected value of
+  <math mathvariant=""sans-serif-italic"">
+    <msubsup><mi>H</mi><mi mathvariant=""sans-serif"">s</mi><mi>cp</mi></msubsup>
+  </math>(HOBr) &gt; 1.3E3 M/atm.",,,
+4.0-3,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,4.0,Errata for version 4.0 (already corrected in subsequent versions),False,"Due to a unit conversion error, all H′ values (products of Henry's law and acidity constants) for strong acids in my compilation were off by a factor of 1000. The corrected data are: H′(HNO3) =2.6×10^7×exp(8700 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Clegg and Brimblecombe, 1990) H′(HNO3) =2.4×10^7×exp(8700 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Brimblecombe and Clegg, 1989) H′(HF) =9.4×10^1×exp(7400 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Brimblecombe and Clegg, 1989) H′(HCl) =2.0×10^7 mol^2/(m^6 Pa) (Clegg and Brimblecombe, 1986) H′(HCl) =2.0×10^7×exp(9000 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Wagman et al., 1982) H′(HCl) =2.0×10^7×exp(9000 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Carslaw et al., 1995) H′(HCl) =2.0×10^7×exp(9000 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Brimblecombe and Clegg, 1989) H′(HBr) =7.0×10^9×exp(10000 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Wagman et al., 1982) H′(HBr) =7.1×10^9×exp(6100 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Chameides and Stelson, 1992) H′(HBr) =8.2×10^9×exp(10000 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Carslaw et al., 1995) H′(HBr) =1.3×10^(10)×exp(10000 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Brimblecombe and Clegg, 1989) H′(HI) =2.1×10^(10)×exp(9800 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Wagman et al., 1982) H′(HI) =2.5×10^(10)×exp(9800 K ((1)/(T)−(1)/(T^⊖)))mol^2/(m^6 Pa) (Brimblecombe and Clegg, 1989) H′(MSA) =6.4×10^(14) mol^2/(m^6 Pa) (Brimblecombe and Clegg, 1988) (the error was found after Yuling Chen pointed out an inconsistency in the data for HF; the data were corrected on 2021-02-07)","Due to a unit conversion error, all H&#8242; values (products of
+  Henry's law and acidity constants) for strong acids in my compilation
+  were off by a factor of 1000. The corrected data are:
+  <table>
+    <tr><td>H&#8242;(HNO<sub>3</sub>) =</td><td>2.6&times;10<sup>7</sup>&times;exp(8700&nbsp;K   ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Clegg and Brimblecombe, 1990)</td></tr>
+    <tr><td>H&#8242;(HNO<sub>3</sub>) =</td><td>2.4&times;10<sup>7</sup>&times;exp(8700&nbsp;K   ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Brimblecombe and Clegg, 1989)</td></tr>
+    <tr><td>H&#8242;(HF)              =</td><td>9.4&times;10<sup>1</sup>&times;exp(7400&nbsp;K   ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Brimblecombe and Clegg, 1989)</td></tr>
+    <tr><td>H&#8242;(HCl)             =</td><td>2.0&times;10<sup>7</sup>                                                                    </td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Clegg and Brimblecombe, 1986)</td></tr>
+    <tr><td>H&#8242;(HCl)             =</td><td>2.0&times;10<sup>7</sup>&times;exp(9000&nbsp;K   ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Wagman et al., 1982)         </td></tr>
+    <tr><td>H&#8242;(HCl)             =</td><td>2.0&times;10<sup>7</sup>&times;exp(9000&nbsp;K   ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Carslaw et al., 1995)        </td></tr>
+    <tr><td>H&#8242;(HCl)             =</td><td>2.0&times;10<sup>7</sup>&times;exp(9000&nbsp;K   ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Brimblecombe and Clegg, 1989)</td></tr>
+    <tr><td>H&#8242;(HBr)             =</td><td>7.0&times;10<sup>9</sup>&times;exp(10000&nbsp;K  ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Wagman et al., 1982)         </td></tr>
+    <tr><td>H&#8242;(HBr)             =</td><td>7.1&times;10<sup>9</sup>&times;exp(6100&nbsp;K   ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Chameides and Stelson, 1992) </td></tr>
+    <tr><td>H&#8242;(HBr)             =</td><td>8.2&times;10<sup>9</sup>&times;exp(10000&nbsp;K  ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Carslaw et al., 1995)        </td></tr>
+    <tr><td>H&#8242;(HBr)             =</td><td>1.3&times;10<sup>10</sup>&times;exp(10000&nbsp;K ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Brimblecombe and Clegg, 1989)</td></tr>
+    <tr><td>H&#8242;(HI)              =</td><td>2.1&times;10<sup>10</sup>&times;exp(9800&nbsp;K  ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Wagman et al., 1982)         </td></tr>
+    <tr><td>H&#8242;(HI)              =</td><td>2.5&times;10<sup>10</sup>&times;exp(9800&nbsp;K  ((1)/(T)&#8722;(1)/(T<sup>&ominus;</sup>)))</td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Brimblecombe and Clegg, 1989)</td></tr>
+    <tr><td>H&#8242;(MSA)             =</td><td>6.4&times;10<sup>14</sup>                                                                   </td><td>mol<sup>2</sup>/(m<sup>6</sup>&nbsp;Pa) </td><td> (Brimblecombe and Clegg, 1988)</td></tr>
+  </table>
+  (the error was found after Yuling Chen pointed out an inconsistency in
+  the data for HF; the data were corrected on 2021-02-07)",,,
+4.0-4,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,4.0,Errata for version 4.0 (already corrected in subsequent versions),False,"In Tab. 5 of Sander (2015), the derivate d ln H / d (1/T) for CT2 should be -2CT3 , not -2C/T3 .","In Tab. 5 of <a href=""https://doi.org/10.5194/acp-15-4399-2015""
+  target=""_blank"">Sander (2015)</a>, the derivate
+  <math>
+    d ln <mi mathvariant=""sans-serif-italic"">H</mi> / d
+    (1/<mi mathvariant=""sans-serif-italic"">T</mi>)
+  </math>
+  for
+  <math mathvariant=""sans-serif-italic"">
+    <msup><mi>CT</mi><mi>2</mi></msup>
+  </math>  
+  should be 
+  <math mathvariant=""sans-serif-italic"">
+    <msup><mi>-2CT</mi><mi>3</mi></msup>
+  </math>,
+  not  
+  <math mathvariant=""sans-serif-italic"">
+    <msup><mi>-2C/T</mi><mi>3</mi></msup>
+  </math>.",,,
+4.0-5,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,4.0,Errata for version 4.0 (already corrected in subsequent versions),False,"The supplement of Sander (2015) contains several Fortran90 files (output/*.f90) with temperature-dependent definitions of Henry's law constants. Here, the expression (1./298.15-1./T) must be replaced by (1./T-1./298.15).","The supplement of
+    <a href=""https://doi.org/10.5194/acp-15-4399-2015""
+    target=""_blank"">Sander (2015)</a> contains several Fortran90 files
+    (output/*.f90) with temperature-dependent definitions of Henry's law
+    constants. Here, the expression (1./298.15-1./T) must be replaced by
+    (1./T-1./298.15).",,,
+3.99-1,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3.99,Errata for version 3.99 (already corrected in subsequent versions),False,Bug fix for data in table 5 by Pfeifer et al. (2001).,Bug fix for data in table 5 by Pfeifer et al. (2001).,,,
+3.99-2,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3.99,Errata for version 3.99 (already corrected in subsequent versions),False,The CASRN for tribromomethanol is [5405-30-1].,The CASRN for tribromomethanol is [5405-30-1].,,,
+3-1,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"In note 20, the solubility for strong acids should be defind as: ([H^+] * [A^-]) / p(HA) and NOT ([H^+] + [A^-]) / p(HA) Thanks to J. C. Wheeler for pointing this out to me.","In note 20, the solubility for strong acids should be defind
+as:<br>
+
+([H<sup>+</sup>] * [A<sup>-</sup>]) / p(HA)<br>
+
+and NOT<br>
+
+([H<sup>+</sup>] + [A<sup>-</sup>]) / p(HA)<br>
+
+Thanks to J. C. Wheeler for pointing this out to me.",,,
+3-2,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"There's a nasty little error in the sign of the temperature dependence in all tables: The values given in the third column are +d ln H / d (1/T) and NOT - d ln H / d (1/T) The solubility decreases with increasing temperature, of course. This is shown correctly in equation (5) on page 3.","There's a nasty little error in the sign
+of the temperature dependence in all tables:<br>
+
+The values given in the third column are<br>
+
++d ln H / d (1/T) <br>
+
+and NOT<br>
+
+- d ln H / d (1/T)<br>
+
+The solubility decreases with increasing temperature, of course. This is
+shown correctly in equation (5) on page 3.",,,
+3-3,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"Although not mentioned in the table, it should be noted that values for HCHO refer to effective Henry's law constants that take into account increased solubility due to the formation of the diol: HCHO + H2O = CH2(OH)2","Although not mentioned in the table, it should be noted that values
+for HCHO refer to effective Henry's law constants that take into account
+increased solubility due to the formation of the diol:<br>
+
+HCHO + H2O = CH2(OH)2",,,
+3-4,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"Data from Allen et al. (1998) are measured, not estimated.","Data from Allen et al. (1998) are measured, not estimated.",,,
+3-5,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"The reference Gmehling et al. (1981) should be: J. Gmehling and U. Onken and W. Arlt. Vapor-Liquid Equilibrium Data Collection. D. Behrens and R. Eckermann (eds.). Dechema, Frankfurt/Main Vol. 1a (1981)","The reference Gmehling et al. (1981) should be: J. Gmehling and U. Onken
+and W. Arlt. Vapor-Liquid Equilibrium Data Collection. D. Behrens and R.
+Eckermann (eds.). Dechema, Frankfurt/Main Vol. 1a (1981)",,,
+3-6,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,page 15: The value of 1.3E-1 M/atm for 2-methylpentane from Ashworth et al. (1988) was quoted incorrectly by Staudinger and Roberts (1996).,"page 15: The value of 1.3E-1 M/atm for 2-methylpentane from
+Ashworth et al. (1988) was quoted incorrectly by Staudinger and Roberts
+(1996).",,,
+3-7,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,page 36: The values listed for benzo[a]fluoranthene actually refere to benzo[k]fluoranthene.,"page 36: The values listed for benzo[a]fluoranthene actually refere
+to benzo[k]fluoranthene.",,,
+3-8,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 38: The CASRN for 1-heptanol is [111-70-6], not [110-70-6].","page 38: The CASRN for 1-heptanol is [111-70-6], not [110-70-6].",,,
+3-9,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 41: The value for 1,2-ethanediol from Bone et al. (1983) should be 4.1E5 M/atm, not 4.0E6 M/atm.","page 41: The value for 1,2-ethanediol from Bone et al. (1983)
+should be 4.1E5 M/atm, not 4.0E6 M/atm.",,,
+3-10,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 44: The CASRN for methanal (formaldehyde) is [50-00-0], not [50-50-0].","page 44: The CASRN for methanal (formaldehyde) is [50-00-0], not
+[50-50-0].",,,
+3-11,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 60: For 2,2-dimethylpyridine, the temperature dependence is 7000 K, not 700 K.","page 60: For  2,2-dimethylpyridine, the temperature dependence is
+7000 K, not 700 K.",,,
+3-12,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 61: For 2-butyl nitrate, both the trivial name ""isobutyl nitrate"" and the CASRN are wrong. The correct CASRN for 2-butyl nitrate is 924-52-7.","page 61: For 2-butyl nitrate, both the trivial name ""isobutyl
+nitrate"" and the CASRN are wrong. The correct CASRN for 2-butyl nitrate
+is 924-52-7.",,,
+3-13,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,page 61: The species called tert-butyl nitrate should actually be isobutyl nitrate.,"page 61: The species called tert-butyl nitrate should actually be
+isobutyl nitrate.",,,
+3-14,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 75: The value of 2.2 by Hine and Mookerjee (1975) refers to 1,1,1,2-tetrachloroethane, not to 1,1,2,2-tetrachloroethane.","page 75: The value of 2.2 by Hine and Mookerjee (1975) refers to
+1,1,1,2-tetrachloroethane, not to 1,1,2,2-tetrachloroethane.",,,
+3-15,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 90: The CASRN for 1-butanethiol is [109-79-5], not [109-75-5].","page 90: The CASRN for 1-butanethiol is [109-79-5], not [109-75-5].",,,
+3-16,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 90: The value of 5.8E-1 by Yaws and Yang (1982) refers to diethyl sulfide, not to diethyl disulfide.","page 90: The value of 5.8E-1 by Yaws and Yang (1982) refers to
+diethyl sulfide, not to diethyl disulfide.",,,
+3-17,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 92: The species called 3,4'-PCB is actually 3,4-PCB.","page 92: The species called 3,4'-PCB is actually 3,4-PCB.",,,
+3-18,https://www.henrys-law.org/henry/errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c,2026-11-08T04:46:42+00:00,3,Errata for version 3 (already corrected in subsequent versions),False,"page 93: The value of 1.4E2 by USEPA (1982) refers to 2,4,6-trichlorophenol, not to 2,4,6-PCB.","page 93: The value of 1.4E2 by USEPA (1982) refers to
+2,4,6-trichlorophenol, not to 2,4,6-PCB.",,,

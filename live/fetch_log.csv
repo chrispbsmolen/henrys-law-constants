@@ -1,0 +1,8 @@
+url,fetched_utc,http_status,bytes,file,sha256
+https://www.henrys-law.org/henry/errata.html,2026-11-08T04:46:42+00:00,200,15769,errata.html,a4d945096a110a2ce713450733c8c8afbdf33b8bd6c259beb1a8e3f5f003d90c
+https://www.henrys-law.org/henry/casrn/3907-98-0,2026-11-08T04:46:49+00:00,200,8875,casrn_3907-98-0.html,ef2ec17b0a4f0e582bfd50bf922067e98591d2f662be114aea273fe97f5fc779
+https://www.henrys-law.org/henry/casrn/14989-30-1,2026-11-08T04:46:55+00:00,200,11809,casrn_14989-30-1.html,903b17995c1d844677356cef0864a84ad4c37b558ba66df35cad0cb75055018e
+https://www.henrys-law.org/henry/casrn/96-47-9,2026-11-08T04:47:02+00:00,200,21312,casrn_96-47-9.html,f42154e7bd824b0824b624b2fc899a49b00bb866e9b5d3a105b916be1e2f0695
+https://www.henrys-law.org/henry/casrn/534-22-5,2026-11-08T04:47:27+00:00,200,9475,casrn_534-22-5.html,1c23a49348929451123342fa9561a551ce76c0a9f3daa559ebf4fab33493a7aa
+https://www.henrys-law.org/henry/notes.html,2026-11-08T05:02:29+00:00,200,255343,notes.html,a8e004e188167096318505beca7c5a8948e73abf474d7611a72565011c5c43b0
+https://www.henrys-law.org/henry/references.html,2026-11-08T05:02:36+00:00,200,513142,references.html,4da1b0cc7f04dcf1b4c2f204c6b4e4a5997535b6c488060bc7910b68307b49ad

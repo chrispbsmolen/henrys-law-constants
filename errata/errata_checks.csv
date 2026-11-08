@@ -1,0 +1,26 @@
+entry_id,check,result
+4.0-1,"dinitrogen pentoxide, Fried et al. (1994): H = 8.7E-4 mol/(m3 Pa), mindHR = 3600 K",pass
+4.0-2,"hypobromous acid has a lower limit of about 1.3E3 M/atm (two-digit rounding); v5.0.0 lower limits in M/atm: 1317.225, 1925.175",pass
+3.99-2,species 'tribromomethanol' has CAS RN 5405-30-1,pass
+3-8,species '1-heptanol' has CAS RN 111-70-6,pass
+3-10,species 'methanal' has CAS RN 50-00-0,pass
+3-12,species '2-butyl nitrate' has CAS RN 924-52-7,pass
+3-15,species '1-butanethiol' has CAS RN 109-79-5,pass
+4.0-3,(no machine-checkable statement),not checked
+4.0-4,(no machine-checkable statement),not checked
+4.0-5,(no machine-checkable statement),not checked
+3.99-1,(no machine-checkable statement),not checked
+3-1,(no machine-checkable statement),not checked
+3-2,(no machine-checkable statement),not checked
+3-3,(no machine-checkable statement),not checked
+3-4,(no machine-checkable statement),not checked
+3-5,(no machine-checkable statement),not checked
+3-6,(no machine-checkable statement),not checked
+3-7,(no machine-checkable statement),not checked
+3-9,(no machine-checkable statement),not checked
+3-11,(no machine-checkable statement),not checked
+3-13,(no machine-checkable statement),not checked
+3-14,(no machine-checkable statement),not checked
+3-16,(no machine-checkable statement),not checked
+3-17,(no machine-checkable statement),not checked
+3-18,(no machine-checkable statement),not checked

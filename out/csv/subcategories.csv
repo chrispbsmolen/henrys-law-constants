@@ -1,0 +1,64 @@
+subcategory_id,subcategory,category_id,category_key,sql_seq
+1,Oxygen (O),1,Inorganic species,1078
+2,Hydrogen (H),1,Inorganic species,1228
+3,Nitrogen (N),1,Inorganic species,1385
+4,Fluorine (F),1,Inorganic species,1756
+5,Chlorine (Cl),1,Inorganic species,1796
+6,Bromine (Br),1,Inorganic species,2029
+7,Iodine (I),1,Inorganic species,2131
+8,Sulfur (S),1,Inorganic species,2211
+9,"Rare gases (He, Ne, Ar, Kr, Xe, Rn)",1,Inorganic species,2393
+10,"Other elements (B, Se, P, As, Hg)",1,Inorganic species,2637
+11,Alkanes,2,"Hydrocarbons (C, H)",2733
+12,Cycloalkanes,2,"Hydrocarbons (C, H)",9770
+13,Aliphatic alkenes and cycloalkenes,2,"Hydrocarbons (C, H)",11172
+14,Aliphatic alkynes,2,"Hydrocarbons (C, H)",13959
+15,Mononuclear aromatics,2,"Hydrocarbons (C, H)",14609
+16,Terpenes and terpenoids,2,"Hydrocarbons (C, H)",17229
+17,Polynuclear aromatics,2,"Hydrocarbons (C, H)",17472
+18,Carbon oxides,3,Organic species with oxygen (O),19161
+19,Alcohols (ROH),3,Organic species with oxygen (O),19301
+20,Polyols (R(OH)<sub>n</sub>),3,Organic species with oxygen (O),25165
+21,Peroxides (ROOH) and peroxy radicals (ROO),3,Organic species with oxygen (O),26552
+22,Aldehydes (RCHO),3,Organic species with oxygen (O),30010
+23,Ketones (RCOR),3,Organic species with oxygen (O),33162
+24,Carboxylic acids (RCOOH) and peroxy carboxylic acids (RCOOOH),3,Organic species with oxygen (O),43969
+25,Esters (RCOOR),3,Organic species with oxygen (O),46918
+26,Ethers (ROR),3,Organic species with oxygen (O),52636
+27,Heterocycles with oxygen,3,Organic species with oxygen (O),56117
+28,Oxidized terpenoids,3,Organic species with oxygen (O),56637
+29,Miscellaneous,3,Organic species with oxygen (O),56705
+30,"Amines (C, H, N)",4,Organic species with nitrogen (N),58047
+31,"Heterocycles with nitrogen (C, H, N)",4,Organic species with nitrogen (N),60170
+32,"Nitriles (C, H, N)",4,Organic species with nitrogen (N),61179
+33,"Amines, amides, amino acids (C, H, O, N)",4,Organic species with nitrogen (N),61555
+34,"Heterocycles with oxygen and nitrogen (C, H, O, N)",4,Organic species with nitrogen (N),62792
+35,Nitrates (RONO<sub>2</sub>),4,Organic species with nitrogen (N),63615
+36,"Nitriles with oxygen (C, H, O, N)",4,Organic species with nitrogen (N),73675
+37,Nitro compounds (RNO<sub>2</sub>),4,Organic species with nitrogen (N),73750
+38,Organic fluorine,5,Organic species with fluorine (F),76167
+39,"Chlorocarbons (C, H, Cl)",6,Organic species with chlorine (Cl),78346
+40,Polychlorinated naphthalenes (PCNs),6,Organic species with chlorine (Cl),83076
+41,Polychlorinated biphenyls (PCBs),6,Organic species with chlorine (Cl),83291
+42,"Oxygenated chlorocarbons (C, H, O, Cl)",6,Organic species with chlorine (Cl),86840
+43,Polychlorinated diphenyl ethers (PCDEs),6,Organic species with chlorine (Cl),89295
+44,Polychlorinated dibenzofuranes (PCDFs),6,Organic species with chlorine (Cl),89534
+45,Polychlorinated dibenzo-p-dioxins (PCDDs),6,Organic species with chlorine (Cl),89867
+46,"Chlorocarbons with nitrogen (C, H, O, N, Cl)",6,Organic species with chlorine (Cl),90331
+47,"Chlorofluorocarbons (C, H, O, N, F, Cl)",6,Organic species with chlorine (Cl),92832
+48,"Bromocarbons (C, H, O, N, Br)",7,Organic species with bromine (Br),94037
+49,Polybrominated diphenyl ethers (PBDEs),7,Organic species with bromine (Br),95908
+50,"Bromine, chlorine and fluorine (C, H, N, O, F, Cl, Br)",7,Organic species with bromine (Br),96917
+51,"Iodocarbons (C, H, O, Cl, I)",8,Organic species with iodine (I),97459
+52,"Sulfur (C, H, O, N, Cl, S)",9,Organic species with sulfur (S),98055
+53,"Phosphorus (C, H, O, N, Cl, Br, S, P)",10,Organic species with phosphorus (P),102240
+54,Sodium (Na),11,Organic species with other elements,103388
+55,Aluminum (Al),11,Organic species with other elements,103421
+56,Silicon (Si),11,Organic species with other elements,103427
+57,Calcium (Ca),11,Organic species with other elements,103829
+58,Zinc (Zn),11,Organic species with other elements,103834
+59,Arsenic (Sn),11,Organic species with other elements,103851
+60,Selenium (Se),11,Organic species with other elements,103889
+61,Tin (Sn),11,Organic species with other elements,103902
+62,Mercury (Hg),11,Organic species with other elements,103934
+63,Lead (Pb),11,Organic species with other elements,104033
