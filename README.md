@@ -11,6 +11,9 @@ Christopher Smolen and is not endorsed by Rolf Sander or the Max Planck
 Institute for Chemistry. The authoritative source is the compilation itself:
 the paper and https://www.henrys-law.org.
 
+Rolf Sander confirmed on 8 November 2026 that his SQL file may be used
+under CC BY 4.0.
+
 ## Source
 
 Sander, R.: Compilation of Henry's law constants (version 5.0.0) for water as

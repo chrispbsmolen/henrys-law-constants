@@ -4,4 +4,4 @@ All credit for the compilation of Henry's law constants belongs to Rolf Sander (
 
 If you find an error in the conversion, or if you are the compiler and would like anything corrected, credited differently, or this edition withdrawn, please write to Christopher Smolen, chrispbsmolen@gmail.com. Requests from the compiler are acted on without discussion.
 
-Corrections to the data themselves belong with the compiler (https://henrys-law.org). Issues found during the conversion are listed, unchanged, in reports/REPORT_FOR_SANDER.md and reports/inconsistencies.csv.
+Corrections to the data themselves belong with the compiler (https://henrys-law.org). Issues found during the conversion are listed, unchanged, in reports/REPORT_FOR_SANDER.md and reports/inconsistencies.csv. These points were sent to the compiler on 7 November 2026 and have not yet been confirmed by him; treat them as unconfirmed until this file says otherwise.
