@@ -54,3 +54,4 @@ d6a65d9b75d31de622159fd14aa7e2090947ad67a12800fdec9fbc3ce7eed52d  ./scripts/live
 3540a65b8b9977ae1a25a99c047b0da9694dd2659405cfb47b361b546938cf29  ./scripts/make_docs.py
 6ba9d9d11a52a325cb8637cd4c6a716f4a458aad9bd86ea325b38ec56b6b29aa  ./scripts/sqldump.py
 f27ea5ed98a3b27c5a2bbaf3eb5c6ad51f016052c6f0194a45dd826c1887b78b  ./scripts/verify.py
+62d388576bedfdfcf12e83328545980e41c6cd54a1fb5cb860871bf4216e1205  reports/Henrys_law_v5.0.0_points_for_the_compiler.pdf
