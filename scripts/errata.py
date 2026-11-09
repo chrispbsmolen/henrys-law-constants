@@ -288,8 +288,16 @@ def main():
     pat.to_parquet(os.path.join(edir, "patches.parquet"), index=False)
     for u in unlisted:
         a, b = norm_note(u["base_value"]), norm_note(u["live_value"])
+        nums_a, nums_b = re.findall(r"\d+", a or ""), re.findall(r"\d+", b or "")
+        changed = [(x, y) for x, y in zip(nums_a, nums_b) if x != y]
         if not a or not b:
             u["difference_kind"] = "added or removed"
+        elif u["base_value"].count("href=") > u["live_value"].count("href="):
+            # a link present in the SQL file has lost its target on the live page
+            u["difference_kind"] = "link broken on live site"
+        elif re.sub(r"\d", "#", a) == re.sub(r"\d", "#", b) and changed and all(
+                re.fullmatch(r"(19|20)\d\d", x) and re.fullmatch(r"(19|20)\d\d", y) for x, y in changed):
+            u["difference_kind"] = "year only"
         elif re.sub(r"\d", "#", a) == re.sub(r"\d", "#", b):
             u["difference_kind"] = "digits only (e.g. refitted coefficients)"
         elif a.lower() == b.lower():

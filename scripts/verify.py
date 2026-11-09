@@ -424,6 +424,11 @@ def main():
         issue("reference_unused", "info", "literature", r.literature_id,
               "reference %s (%s) is cited by no henry row and no note" % (r.bibtexkey, r.quotation_text))
     res["literature_with_doi"] = int((lit.doi != "").sum())
+    for r in lit[lit.n_doi_links.astype(int) > 1].itertuples():
+        issue("several_doi_links", "warning", "literature", r.literature_id,
+              "bibliography %r has %s doi.org links; only the first (%s) is in the doi column" % (
+                  r.bibtexkey, r.n_doi_links, r.doi))
+    res["references_with_several_doi_links"] = int((lit.n_doi_links.astype(int) > 1).sum())
     d = lit[(lit.doi != "") & lit.doi.str.upper().duplicated(keep=False)]
     for v, g in d.groupby(d.doi.str.upper()):
         issue("duplicate_doi", "warning", "literature", ";".join(g.literature_id),

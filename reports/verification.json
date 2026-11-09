@@ -96,6 +96,7 @@
  "literature_unused": 47,
  "literature_unused_anywhere": 14,
  "literature_with_doi": 942,
+ "references_with_several_doi_links": 0,
  "dois_shared_by_several_references": 2,
  "citation_labels_shared": 0,
  "notes_unused": 0,

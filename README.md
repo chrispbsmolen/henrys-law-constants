@@ -2,9 +2,11 @@
 
 This is a machine-readable edition of Rolf Sander's compilation of Henry's law
 constants for water as solvent, version 5.0.0. It contains the same 46,434
-constants for 10,173 species from 1,076 references as the compilation, with
-the notes and the type codes, in plain tables (CSV, Parquet and SQLite)
-instead of a PostgreSQL dump.
+values for 10,173 species as the compilation (45,233 of them with a value for
+Hscp; the others give only a temperature dependence or a note), the 1,076
+entries of its literature table (the paper counts 995 references), the notes
+and the type codes, in plain tables (CSV, Parquet and SQLite) instead of a
+PostgreSQL dump.
 
 **This is not an official release.** It was prepared independently by
 Christopher Smolen and is not endorsed by Rolf Sander or the Max Planck

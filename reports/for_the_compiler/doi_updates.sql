@@ -1,6 +1,7 @@
 -- Fill literature.doi from the doi.org link in each bibliography.
 -- Source: henry-5.0.0.sql (5.0.0), 942 of 1076 references have a link.
--- Each DOI is the link target as written, with HTML entities decoded.
+-- Each DOI is the link target as written, with HTML entities decoded, except where a
+-- comment says the live references page gives a newer one.
 -- Review before running. Wrapped in one transaction.
 BEGIN;
 UPDATE literature SET doi = '10.1021/JE00044A027' WHERE bibtexkey = '2291' AND (doi IS NULL OR doi = '');
@@ -899,7 +900,8 @@ UPDATE literature SET doi = '10.1021/J150546A024' WHERE bibtexkey = '776' AND (d
 UPDATE literature SET doi = '10.1021/JA01057A045' WHERE bibtexkey = '3799' AND (doi IS NULL OR doi = '');
 UPDATE literature SET doi = '10.1021/IE50378A014' WHERE bibtexkey = '3541' AND (doi IS NULL OR doi = '');
 UPDATE literature SET doi = '10.1016/J.IJMS.2015.07.015' WHERE bibtexkey = '3215' AND (doi IS NULL OR doi = '');
-UPDATE literature SET doi = '10.5194/GMD-2023-102' WHERE bibtexkey = '3765' AND (doi IS NULL OR doi = '');
+-- 3765: the SQL file has 10.5194/GMD-2023-102; the live references page (https://www.henrys-law.org/henry/references.html, read 2026-11-08) has 10.5194/GMD-17-4311-2024, used here.
+UPDATE literature SET doi = '10.5194/GMD-17-4311-2024' WHERE bibtexkey = '3765' AND (doi IS NULL OR doi = '');
 UPDATE literature SET doi = '10.1021/CR60306A003' WHERE bibtexkey = '190' AND (doi IS NULL OR doi = '');
 UPDATE literature SET doi = '10.1016/J.CHEMOSPHERE.2017.05.044' WHERE bibtexkey = '3271' AND (doi IS NULL OR doi = '');
 UPDATE literature SET doi = '10.1111/J.1600-0889.1988.TB00109.X' WHERE bibtexkey = '160' AND (doi IS NULL OR doi = '');

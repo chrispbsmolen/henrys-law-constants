@@ -135,10 +135,11 @@ The doi column of the literature table is never filled; 942 of 1076 bibliographi
 The live site differs from henry_5.0.0_sql.zip in places that the errata page does not mention. Comparing the live notes and references pages with the dump gives 215 differences (the data rows themselves were compared only on the 4 species pages read for the errata):
 
 - notes / digits only (e.g. refitted coefficients): 200
-- literature / text: 10
+- literature / text: 9
 - literature / letter case only: 3
 - notes / letter case only: 1
-- literature / digits only (e.g. refitted coefficients): 1
+- literature / link broken on live site: 1
+- literature / year only: 1
 
 Most are three-parameter fits whose coefficients changed in the fourth or fifth digit, for example:
 
