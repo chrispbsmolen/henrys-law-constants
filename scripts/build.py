@@ -2,7 +2,11 @@
 
 Usage: python3 -I build.py <henry_5.0.0_sql.zip> <paper.pdf> <outdir> <live species page>
 
-The live species page is only used for the short type labels (its legend).
+Any other release can be built the same way: pass its zip (or the .sql file itself)
+and set HENRY_ANY_VERSION=1. The version is read from the file name inside
+(henry-X.Y.Z.sql) and the SQLite file is named henry_X.Y.Z.sqlite.
+
+The live species page is only used for the short type labels (its legend); pass - to skip it.
 
 Every value comes from the SQL file (or, for the type-code legend and the
 unit conversion factor, from the text of the 2023 paper). Nothing is typed in
@@ -38,6 +42,26 @@ RE_DOI_HREF = re.compile(r'href="https?://(?:dx\.)?doi\.org/([^"]+)"')
 
 def sha256(b):
     return hashlib.sha256(b).hexdigest()
+
+
+def read_sql(path, data):
+    """Return (bytes, member name) of the SQL file: the zip member henry-*.sql, or the file itself."""
+    if not zipfile.is_zipfile(io.BytesIO(data)):
+        return data, os.path.basename(path)
+    with zipfile.ZipFile(io.BytesIO(data)) as z:
+        names = z.namelist()
+        member = SQL_MEMBER if SQL_MEMBER in names else None
+        if member is None:
+            sql = [n for n in names if n.lower().endswith(".sql")]
+            if len(sql) != 1:
+                sys.exit("expected one .sql file in the zip, found %r" % sql)
+            member = sql[0]
+        return z.read(member), member
+
+
+def sql_version(member):
+    m = re.search(r"henry[-_](.+?)\.sql$", os.path.basename(member))
+    return m.group(1) if m else "unknown"
 
 
 def parse_hominus(s):
@@ -122,10 +146,11 @@ def site_short_labels(page):
 def main():
     zpath, pdf, outdir, site_page = sys.argv[1:5]
     zbytes = open(zpath, "rb").read()
-    if sha256(zbytes) != ZIP_SHA256:
-        sys.exit("zip SHA-256 mismatch: %s" % sha256(zbytes))
-    with zipfile.ZipFile(io.BytesIO(zbytes)) as z:
-        raw = z.read(SQL_MEMBER)
+    is_v500 = sha256(zbytes) == ZIP_SHA256
+    if not is_v500 and os.environ.get("HENRY_ANY_VERSION") != "1":
+        sys.exit("zip SHA-256 mismatch: %s (set HENRY_ANY_VERSION=1 to build another release)" % sha256(zbytes))
+    raw, member = read_sql(zpath, zbytes)
+    version = sql_version(member)
     src = raw.decode("utf-8")
     tables, events, spans = execute(src)
 
@@ -225,7 +250,7 @@ def main():
     species["n_henry_rows"] = species["species_id"].map(sp_use).fillna(0).astype(int)
 
     htcount = henry["htype"].value_counts()
-    short = site_short_labels(site_page)
+    short = site_short_labels(site_page) if site_page != "-" else {}  # "-": no saved page, labels left empty
     htype_legend = pd.DataFrame([dict(code=l["code"], short_label=short.get(l["code"], ""),
                                       definition=l["definition"],
                                       source="Sander (2023), Atmos. Chem. Phys. 23, Sect. 3.1 (p. %d)" % l["journal_page"],
@@ -240,9 +265,11 @@ def main():
     for name, df in out.items():
         df.to_csv(os.path.join(outdir, "csv", name + ".csv"), index=False, encoding="utf-8", lineterminator="\n")
         df.to_parquet(os.path.join(outdir, "parquet", name + ".parquet"), index=False)
-    write_sqlite(os.path.join(outdir, "henry_5.0.0.sqlite"), out)
+    sqlite_file = "henry_%s.sqlite" % version
+    write_sqlite(os.path.join(outdir, sqlite_file), out)
 
-    meta = dict(source_url=SOURCE_URL, zip_sha256=ZIP_SHA256, sql_member=SQL_MEMBER,
+    meta = dict(source_url=SOURCE_URL if is_v500 else os.path.basename(zpath),
+                zip_sha256=sha256(zbytes), sql_member=member, version=version, sqlite_file=sqlite_file,
                 sql_sha256=sha256(raw), sql_bytes=len(raw), statements=len(spans),
                 conversion_factor_si_to_matm=factor[0],
                 conversion_factor_source="Sander (2023), Table 2 (p. %d)" % factor[2],

@@ -302,17 +302,20 @@ def main():
 
     # ---- checksums ----
     files = []
+    # the files of this repository only: not the downloaded inputs, the saved web pages
+    # (which are not redistributed), release checks or the git metadata
+    skip_dirs = {"__pycache__", ".git", "inputs", "release_check"}
     for root, dirs, fs in os.walk(bd):
-        dirs[:] = sorted(d for d in dirs if d != "__pycache__")
+        dirs[:] = sorted(d for d in dirs if d not in skip_dirs)
         for f in sorted(fs):
             p = os.path.join(root, f)
             rel = os.path.relpath(p, bd)
-            if rel == "SHA256SUMS":
+            if rel == "SHA256SUMS" or (rel.startswith("live" + os.sep) and rel != os.path.join("live", "fetch_log.csv")):
                 continue
             files.append((rel, os.path.getsize(p), sha256_file(p)))
     with open(os.path.join(bd, "SHA256SUMS"), "w") as f:
-        for rel, size, h in files:
-            f.write("%s  %s\n" % (h, rel))
+        for rel, size, h in sorted(files):
+            f.write("%s  ./%s\n" % (h, rel))
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 Data (out/, errata/, reports/, data_dictionary.csv): Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ . The data are by Rolf Sander, published in: R. Sander, Compilation of Henry's law constants (version 5.0.0) for water as solvent, Atmos. Chem. Phys. 23, 10901-12440 (2023), doi:10.5194/acp-23-10901-2023, under CC BY 4.0. Converted by Christopher Smolen.
 
-Code (scripts/, run_all.sh, fetch_inputs.sh): MIT License
+Code (scripts/, run_all.sh, check_release.sh, fetch_inputs.sh): MIT License
 
 Copyright (c) 2026 Christopher Smolen
 

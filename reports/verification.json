@@ -1,5 +1,6 @@
 {
  "zip_sha256_ok": true,
+ "version": "5.0.0",
  "counts": {
   "categories": 11,
   "subcategories": 63,
@@ -106,6 +107,7 @@
   "negative_mindHR": 14,
   "mindHR_without_H": 968,
   "value_far_from_species_median": 1273,
+  "species_without_inchikey": 13,
   "reference_unused": 14,
   "duplicate_doi": 2
  }

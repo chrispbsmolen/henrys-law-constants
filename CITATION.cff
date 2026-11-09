@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  The data are Rolf Sander's. When you use them, please cite his paper (below, the preferred
+  citation). To refer to this machine-readable edition as well, cite it as given here.
+title: "Henry's law constants (Sander, version 5.0.0) as tidy tables"
+type: dataset
+authors:
+  - family-names: Smolen
+    given-names: Christopher
+license: CC-BY-4.0
+repository-code: "https://github.com/chrispbsmolen/henrys-law-constants"
+keywords:
+  - Henry's law constants
+  - solubility
+  - atmospheric chemistry
+  - open data
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Sander
+      given-names: Rolf
+  title: "Compilation of Henry's law constants (version 5.0.0) for water as solvent"
+  journal: "Atmospheric Chemistry and Physics"
+  volume: 23
+  start: 10901
+  end: 12440
+  year: 2023
+  doi: "10.5194/acp-23-10901-2023"

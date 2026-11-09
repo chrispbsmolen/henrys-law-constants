@@ -1,0 +1,4 @@
+pandas>=2
+pyarrow>=14
+# optional, only for scripts/inchikey_suggestions.py:
+# rdkit

@@ -1,0 +1,12 @@
+{
+  "title": "Henry's law constants (Sander, version 5.0.0) as tidy tables",
+  "upload_type": "dataset",
+  "description": "<p>A machine-readable edition (CSV, Parquet, SQLite) of Rolf Sander's compilation of Henry's law constants for water as solvent, version 5.0.0: 46,434 constants for 10,173 species from 1,076 references, converted from the SQL file published at henrys-law.org, with an errata layer, checks, and tools for checking new releases.</p><p>All credit for the data belongs to Rolf Sander. Please cite his paper: R. Sander, Compilation of Henry's law constants (version 5.0.0) for water as solvent, Atmos. Chem. Phys. 23, 10901-12440, 2023, doi:10.5194/acp-23-10901-2023. This edition is not an official release.</p>",
+  "creators": [{"name": "Smolen, Christopher"}],
+  "license": "cc-by-4.0",
+  "keywords": ["Henry's law constants", "solubility", "atmospheric chemistry", "open data"],
+  "related_identifiers": [
+    {"identifier": "10.5194/acp-23-10901-2023", "relation": "isDerivedFrom", "resource_type": "publication-article", "scheme": "doi"},
+    {"identifier": "https://www.henrys-law.org", "relation": "isDerivedFrom", "scheme": "url"}
+  ]
+}

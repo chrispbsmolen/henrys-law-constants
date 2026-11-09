@@ -157,6 +157,12 @@ temperature dependences) are listed for the compiler in
 `reports/REPORT_FOR_SANDER.md` and `reports/inconsistencies.csv`. None of
 them was changed.
 
+## For the compiler
+
+[FOR_THE_COMPILER.md](FOR_THE_COMPILER.md) explains how to run the same checks on a new release
+(`sh check_release.sh <new sql zip>`), and the files made for the compiler: SQL statements that fill
+the empty `doi` column of the literature table, and suggested InChIKeys for species without one.
+
 ## Licence
 
 The data are by Rolf Sander and are published in the paper above under
@@ -167,6 +173,10 @@ published SQL file. The SQL download itself carries no licence statement;
 this edition relies on the licence of the paper in which the same data are
 published. Short passages of text from the live website (errata entries,
 one note, type labels) are quoted in the errata layer with their source.
+
+The code (scripts/, run_all.sh, check_release.sh, fetch_inputs.sh) is under
+the MIT licence (see LICENSE): anyone, the compiler included, may copy, change
+and use it freely.
 
 ## Credit, corrections and removal
 

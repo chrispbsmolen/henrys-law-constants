@@ -9393,6 +9393,19 @@ value_far_from_species_median,check,henry,46294,"H=8.3e-5 differs from the media
 value_far_from_species_median,check,henry,46301,"H=4.7e-5 differs from the median of the 3 values for 'D5OHFormEst' by a factor of 4255; reference 3676, type Q"
 value_far_from_species_median,check,henry,46318,"H=1.3e-4 differs from the median of the 3 values for 'D5OH2' by a factor of 19231; reference 3676, type Q"
 value_far_from_species_median,check,henry,46387,"H=1.2 differs from the median of the 3 values for '1-(tricyclohexylstannyl)1H-1,2,4-triazole' by a factor of 3833333; reference 3586, type Q"
+species_without_inchikey,info,species,5943,"no InChIKey: (2R,4S)-2,4-pentanediol dinitrate (C5H10N2O6, CAS RN 208252-05-5)"
+species_without_inchikey,info,species,5944,"no InChIKey: (2R,4R)-2,4-pentanediol dinitrate (C5H10N2O6, CAS RN 208252-04-4)"
+species_without_inchikey,info,species,5949,"no InChIKey: (1R,2S)-1,2-cyclohexanediol dinitrate (C6H10N2O6, CAS RN 32342-28-2)"
+species_without_inchikey,info,species,5950,"no InChIKey: (1R,2R)-1,2-cyclohexanediol dinitrate (C6H10N2O6, CAS RN 32342-29-3)"
+species_without_inchikey,info,species,5951,"no InChIKey: (1R,3S)-1,3-cyclohexanediol dinitrate (C6H10N2O6, CAS RN 170994-36-2)"
+species_without_inchikey,info,species,5952,"no InChIKey: (1R,3R)-1,3-cyclohexanediol dinitrate (C6H10N2O6, CAS RN 170994-41-9)"
+species_without_inchikey,info,species,5954,"no InChIKey: (1R,2R)-1,2-cycloheptanediol dinitrate (C7H12N2O6, CAS RN 208252-06-6)"
+species_without_inchikey,info,species,8624,"no InChIKey: triadimenol B (C14H18ClN3O2, CAS RN 82200-72-4)"
+species_without_inchikey,info,species,8625,"no InChIKey: triadimenol A (C14H18ClN3O2, CAS RN 89482-17-7)"
+species_without_inchikey,info,species,8634,"no InChIKey: cis-propiconazole (C15H17Cl2N3O2, CAS RN 112721-87-6)"
+species_without_inchikey,info,species,8635,"no InChIKey: trans-propiconazole (C15H17Cl2N3O2, CAS RN 120523-07-1)"
+species_without_inchikey,info,species,9249,"no InChIKey: (±)-(2R^*,4S^*)-bromuconazole (C13H12BrCl2N3O, CAS RN 114544-80-8)"
+species_without_inchikey,info,species,9250,"no InChIKey: (±)-(2R^*,4R^*)-bromuconazole (C13H12BrCl2N3O, CAS RN 114544-81-9)"
 reference_unused,info,literature,73,reference 2413 (Battino and Clever (1966)) is cited by no henry row and no note
 reference_unused,info,literature,96,reference 3802 (Bettin and Spieweck (1990)) is cited by no henry row and no note
 reference_unused,info,literature,124,reference 1064 (Brennan et al. (1998)) is cited by no henry row and no note

@@ -1,0 +1,14 @@
+species_id,iupac,trivial,formula,casrn
+5943,"(2R,4S)-2,4-pentanediol dinitrate","cis-2,4-pentanediol dinitrate",C5H10N2O6,208252-05-5
+5944,"(2R,4R)-2,4-pentanediol dinitrate","trans-2,4-pentanediol dinitrate",C5H10N2O6,208252-04-4
+5949,"(1R,2S)-1,2-cyclohexanediol dinitrate","cis-1,2-cyclohexanediol dinitrate",C6H10N2O6,32342-28-2
+5950,"(1R,2R)-1,2-cyclohexanediol dinitrate","trans-1,2-cyclohexanediol dinitrate",C6H10N2O6,32342-29-3
+5951,"(1R,3S)-1,3-cyclohexanediol dinitrate","cis-1,3-cyclohexanediol dinitrate",C6H10N2O6,170994-36-2
+5952,"(1R,3R)-1,3-cyclohexanediol dinitrate","trans-1,3-cyclohexanediol dinitrate",C6H10N2O6,170994-41-9
+5954,"(1R,2R)-1,2-cycloheptanediol dinitrate","trans-1,2-cycloheptanediol dinitrate",C7H12N2O6,208252-06-6
+8624,triadimenol B,,C14H18ClN3O2,82200-72-4
+8625,triadimenol A,,C14H18ClN3O2,89482-17-7
+8634,cis-propiconazole,,C15H17Cl2N3O2,112721-87-6
+8635,trans-propiconazole,,C15H17Cl2N3O2,120523-07-1
+9249,"(±)-(2R^*,4S^*)-bromuconazole",,C13H12BrCl2N3O,114544-80-8
+9250,"(±)-(2R^*,4R^*)-bromuconazole",,C13H12BrCl2N3O,114544-81-9

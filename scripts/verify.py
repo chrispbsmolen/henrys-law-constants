@@ -1,6 +1,6 @@
 """Verify the tidy tables against the SQL dump and list internal inconsistencies.
 
-Usage: python3 -I verify.py <henry_5.0.0_sql.zip> <supplement.zip> <outdir> <reportdir>
+Usage: python3 -I verify.py <henry_5.0.0_sql.zip> <supplement.zip or -> <outdir> <reportdir>
 
 The tables are read back from the CSV files (not from memory), and every
 INSERT statement of the dump is regenerated from them and compared byte for
@@ -23,7 +23,7 @@ from decimal import Decimal
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build import ZIP_SHA256, SQL_MEMBER, render_hominus, sha256  # noqa: E402
+from build import ZIP_SHA256, read_sql, render_hominus, sha256  # noqa: E402
 from sqldump import sql_quote  # noqa: E402
 
 SUPPL_SHA256 = "fb0bdedf7ff59afb1ac012b8bc0b64c58e2c6cf666b00a48d26d173aeb6149c7"
@@ -140,15 +140,18 @@ def main():
         issues.append(d)
 
     zb = open(zpath, "rb").read()
-    res["zip_sha256_ok"] = sha256(zb) == ZIP_SHA256
-    src = zipfile.ZipFile(io.BytesIO(zb)).read(SQL_MEMBER).decode("utf-8")
+    is_v500 = sha256(zb) == ZIP_SHA256
+    res["zip_sha256_ok"] = is_v500
+    src = read_sql(zpath, zb)[0].decode("utf-8")
     meta = json.load(open(os.path.join(outdir, "build_meta.json"), encoding="utf-8"))
+    res["version"] = meta.get("version", "5.0.0")
     t = {n: read_csv(outdir, n) for n in TABLES}
 
     # ---- 1. counts ----
     res["counts"] = {n: len(t[n]) for n in TABLES}
-    res["counts_expected"] = EXPECTED
-    res["counts_ok"] = all(len(t[k]) == v for k, v in EXPECTED.items())
+    if is_v500:  # the expected counts are those of v5.0.0
+        res["counts_expected"] = EXPECTED
+        res["counts_ok"] = all(len(t[k]) == v for k, v in EXPECTED.items())
 
     # ---- 2. byte-for-byte regeneration of every INSERT ----
     regen = regenerate(t)
@@ -230,58 +233,59 @@ def main():
     # ---- 4. unit checks ----
     res["factor_from_paper"] = str(fac)
     res["factor_equals_101325_over_1000"] = fac == Decimal(101325) / Decimal(1000)
-    # supplement cross-check
-    sb = open(suppl, "rb").read()
-    res["supplement_sha256_ok"] = sha256(sb) == SUPPL_SHA256
-    zs = zipfile.ZipFile(io.BytesIO(sb))
-    si = parse_f90(zs.read("output/HscpSI.f90").decode("utf-8"), "HscpSI")
-    ma = parse_f90(zs.read("output/Hscp.f90").decode("utf-8"), "Hscp")
-    sp = t["species"]
-    res["f90_species_blocks"] = len(si)
-    hh = h.copy()
-    hh["sid"] = hh.species_id.astype(int)
-    hh["hid"] = hh.henry_id.astype(int)
-    exported = hh[(hh.value_status == "ok") & (hh.htype != "W")].sort_values("hid")
-    res["rows_expected_in_f90"] = len(exported)
-    by_sp = {k: g for k, g in exported.groupby("sid")}
-    f_si_bad = []
-    f_ma_bad = []
-    f_meta_bad = []
-    n_f90 = 0
-    for k, (b, bm) in enumerate(zip(si, ma), start=1):
-        s = sp.iloc[k - 1]
-        # the Fortran files write UNKNOWN where the SQL has an empty string
-        if b["casrn"].replace("UNKNOWN", "") != s.casrn or b["inchikey"].replace("UNKNOWN", "") != s.inchikey:
-            f_meta_bad.append(k)
-        g = by_sp.get(k)
-        rows = [] if g is None else list(g.itertuples())
-        n_f90 += len(b["rows"])
-        if len(rows) != len(b["rows"]):
-            f_si_bad.append((k, "row count %d vs f90 %d" % (len(rows), len(b["rows"]))))
-            continue
-        for r, fr, fm in zip(rows, b["rows"], bm["rows"]):
-            exp = int(r.hscp_exponent) if r.hscp_exponent != "" else 0
-            mine = "%sE%+03d" % (r.hscp_mantissa, exp)
-            ok = (Decimal(mine) == Decimal(fr[0]) and fr[1] == r.mindhr_raw and fr[2] == r.htype
-                  and fr[3] == r.bibtexkey)
-            if not ok:
-                f_si_bad.append((int(r.henry_id), "SQL %s %s %s %s vs f90 %s" % (mine, r.mindhr_raw, r.htype, r.bibtexkey, fr)))
-            # M/atm: the Fortran file shows the conversion of the unrounded value, rounded to
-            # two digits; the SQL value is itself rounded to two digits. The allowed difference
-            # is half a unit in the last digit of each.
-            mv = float(r.hscp_matm)
-            fv = float(fm[0])
-            tol = (0.5 * 10 ** (exp - 1) * float(fac) + 0.5 * 10 ** (int(fm[0].split("E")[1]) - 1)) * (1 + 1e-9)
-            if abs(mv - fv) > tol:
-                f_ma_bad.append((int(r.henry_id), r.hscp_matm, fm[0]))
-    res["f90_value_lines"] = n_f90
-    res["f90_si_mismatches"] = len(f_si_bad)
-    res["f90_si_mismatch_examples"] = f_si_bad[:10]
-    res["f90_matm_beyond_rounding"] = len(f_ma_bad)
-    res["f90_matm_examples"] = f_ma_bad[:10]
-    res["f90_species_identifier_mismatches"] = len(f_meta_bad)
-    for x in f_si_bad:
-        issue("supplement_f90_disagrees", "check", "henry", str(x[0]), x[1])
+    # supplement cross-check (skipped when the supplement is given as "-")
+    if suppl != "-":
+        sb = open(suppl, "rb").read()
+        res["supplement_sha256_ok"] = sha256(sb) == SUPPL_SHA256
+        zs = zipfile.ZipFile(io.BytesIO(sb))
+        si = parse_f90(zs.read("output/HscpSI.f90").decode("utf-8"), "HscpSI")
+        ma = parse_f90(zs.read("output/Hscp.f90").decode("utf-8"), "Hscp")
+        sp = t["species"]
+        res["f90_species_blocks"] = len(si)
+        hh = h.copy()
+        hh["sid"] = hh.species_id.astype(int)
+        hh["hid"] = hh.henry_id.astype(int)
+        exported = hh[(hh.value_status == "ok") & (hh.htype != "W")].sort_values("hid")
+        res["rows_expected_in_f90"] = len(exported)
+        by_sp = {k: g for k, g in exported.groupby("sid")}
+        f_si_bad = []
+        f_ma_bad = []
+        f_meta_bad = []
+        n_f90 = 0
+        for k, (b, bm) in enumerate(zip(si, ma), start=1):
+            s = sp.iloc[k - 1]
+            # the Fortran files write UNKNOWN where the SQL has an empty string
+            if b["casrn"].replace("UNKNOWN", "") != s.casrn or b["inchikey"].replace("UNKNOWN", "") != s.inchikey:
+                f_meta_bad.append(k)
+            g = by_sp.get(k)
+            rows = [] if g is None else list(g.itertuples())
+            n_f90 += len(b["rows"])
+            if len(rows) != len(b["rows"]):
+                f_si_bad.append((k, "row count %d vs f90 %d" % (len(rows), len(b["rows"]))))
+                continue
+            for r, fr, fm in zip(rows, b["rows"], bm["rows"]):
+                exp = int(r.hscp_exponent) if r.hscp_exponent != "" else 0
+                mine = "%sE%+03d" % (r.hscp_mantissa, exp)
+                ok = (Decimal(mine) == Decimal(fr[0]) and fr[1] == r.mindhr_raw and fr[2] == r.htype
+                      and fr[3] == r.bibtexkey)
+                if not ok:
+                    f_si_bad.append((int(r.henry_id), "SQL %s %s %s %s vs f90 %s" % (mine, r.mindhr_raw, r.htype, r.bibtexkey, fr)))
+                # M/atm: the Fortran file shows the conversion of the unrounded value, rounded to
+                # two digits; the SQL value is itself rounded to two digits. The allowed difference
+                # is half a unit in the last digit of each.
+                mv = float(r.hscp_matm)
+                fv = float(fm[0])
+                tol = (0.5 * 10 ** (exp - 1) * float(fac) + 0.5 * 10 ** (int(fm[0].split("E")[1]) - 1)) * (1 + 1e-9)
+                if abs(mv - fv) > tol:
+                    f_ma_bad.append((int(r.henry_id), r.hscp_matm, fm[0]))
+        res["f90_value_lines"] = n_f90
+        res["f90_si_mismatches"] = len(f_si_bad)
+        res["f90_si_mismatch_examples"] = f_si_bad[:10]
+        res["f90_matm_beyond_rounding"] = len(f_ma_bad)
+        res["f90_matm_examples"] = f_ma_bad[:10]
+        res["f90_species_identifier_mismatches"] = len(f_meta_bad)
+        for x in f_si_bad:
+            issue("supplement_f90_disagrees", "check", "henry", str(x[0]), x[1])
 
     # ---- 5. copies agree ----
     pq_ok = {}
@@ -299,7 +303,7 @@ def main():
                     break
         pq_ok[n] = bool(same)
     res["parquet_equals_csv"] = pq_ok
-    con = sqlite3.connect(os.path.join(outdir, "henry_5.0.0.sqlite"))
+    con = sqlite3.connect(os.path.join(outdir, meta.get("sqlite_file", "henry_5.0.0.sqlite")))
     res["sqlite_counts"] = {n: con.execute('SELECT COUNT(*) FROM "%s"' % n).fetchone()[0] for n in TABLES}
     res["sqlite_foreign_key_violations"] = len(con.execute("PRAGMA foreign_key_check").fetchall())
     s1 = con.execute("SELECT SUM(hscp_si) FROM henry WHERE value_status='ok'").fetchone()[0]
@@ -402,6 +406,9 @@ def main():
     res["inchikey_malformed"] = len(bad_ik)
     res["species_without_casrn"] = int((sp.casrn == "").sum())
     res["species_without_inchikey"] = int((sp.inchikey == "").sum())
+    for r in sp[sp.inchikey == ""].itertuples():
+        issue("species_without_inchikey", "info", "species", r.species_id,
+              "no InChIKey: %s (%s, CAS RN %s)" % (r.iupac_text, r.formula_text, r.casrn or "none"))
     res["species_without_henry_rows"] = int((sp.n_henry_rows == "0").sum())
     for r in sp[sp.n_henry_rows == "0"].itertuples():
         issue("species_without_data", "info", "species", r.species_id, "no henry rows for %r" % r.iupac_text)
