@@ -8,6 +8,8 @@ authors:
   - family-names: Smolen
     given-names: Christopher
 license: CC-BY-4.0
+# Concept DOI (all versions); v1.0.0 is 10.5281/zenodo.24091878.
+doi: "10.5281/zenodo.24091877"
 repository-code: "https://github.com/chrispbsmolen/henrys-law-constants"
 keywords:
   - Henry's law constants

@@ -23,6 +23,10 @@ Creative Commons Attribution 4.0 License (CC BY 4.0).
 
 When you use these data, please cite that paper, as the compiler asks.
 
+To refer to this machine-readable edition as well: Smolen C., Henry's law
+constants (Sander, version 5.0.0) as tidy tables, https://doi.org/10.5281/zenodo.24091877
+(all versions). `CITATION.cff` has both in machine-readable form.
+
 The tables were built from the SQL file published on the compilation's website:
 
 | file | URL | bytes | SHA-256 |
